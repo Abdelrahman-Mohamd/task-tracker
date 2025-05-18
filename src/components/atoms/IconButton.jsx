@@ -1,11 +1,9 @@
 import React from "react";
 import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 
 const IconButton = ({
   icon = <AddIcon fontSize="small" />,
-  bgColor = "bg-[#537D5D] hover:bg-[#3b5842]",
+  bgcolor = "bg-[#537D5D] hover:bg-[#3b5842]",
   ariaLAbel = "Add",
   functionality,
 }) => {
@@ -14,7 +12,7 @@ const IconButton = ({
   }
   return (
     <button
-      className={`flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full ${bgColor} text-white shadow-lg transition duration-200 hover:cursor-pointer`}
+      className={`flex items-center justify-center w-7 xs:w-8 sm:w-10 md:w-12 h-7 xs:h-8 sm:h-10 md:h-12 rounded-full aspect-square flex-shrink-0 ${bgcolor} text-white shadow-lg transition duration-200 hover:cursor-pointer`}
       aria-label={ariaLAbel}
       onClick={functionality || defaultButtonHandling}
     >
@@ -24,3 +22,5 @@ const IconButton = ({
 };
 
 export default IconButton;
+
+//check the console for the current errors

@@ -4,7 +4,7 @@ const GenericButton = ({
   buttonText = "Button Text",
   functionality,
   bgColor = "bg-[#D2D0A0] hover:bg-[#C2C0A0]",
-  textColor = "Black",
+  textColor = "text-black",
   textSize = "text-base md:text-lg",
   buttonSize = "md:px-12 py-2 px-4",
 }) => {
