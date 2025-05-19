@@ -21,6 +21,21 @@ const TodoCard = () => {
     }
   }
 
+  function handleDeleteTodo(index) {
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodos);
+  }
+
+  function handleEditTodo(index) {
+    const updatedText = prompt("Edit your todo:", todos[index]);
+    if (updatedText !== null && updatedText.trim() !== "") {
+      const updatedTodos = todos.map((todo, i) =>
+        i === index ? updatedText : todo
+      );
+      setTodos(updatedTodos);
+    }
+  }
+
   return (
     <>
       <Heading headingText="Task Tracker" />
@@ -49,11 +64,14 @@ const TodoCard = () => {
                   bgcolor="bg-[#D2D0A0] hover:bg-[#C2C0A0]"
                   icon={<EditIcon fontSize="small" />}
                   className="flex-shrink-0"
+                  functionality={() => handleEditTodo(idx)}
                 />
                 <IconButton
                   bgcolor="bg-red-400 hover:bg-red-500"
                   icon={<DeleteIcon fontSize="small" />}
                   className="flex-shrink-0"
+                  functionality={() => handleDeleteTodo(idx)}
+                  ariaLAbel="Delete Todo"
                 />
               </div>
             </div>
